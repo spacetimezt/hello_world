@@ -21,7 +21,7 @@ first progra,不知道可不可以写中文。I weite something to know how does
 # 这是粗体 #
 
 - 斜体的显示
-## 这是斜体 ##
+##这是斜体##
 
 ## 代码的引用
 
