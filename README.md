@@ -1,5 +1,5 @@
 # hello_world
-first progra,不知道可不可以写中文。I weite something to know how does it works,just have a try.
+first program,不知道可不可以写中文。I wrote something to know how does it works,just have a try.
 
 
 # 这是我的markdown使用手册
