@@ -14,6 +14,7 @@ json_str = json.dumps(data)
 data = json.loads(json_str)
 ```
 以上就是json数据与字符串数据的相互转换
+
 推荐一个好用的Json字符串美化工具：[点我](http://tools.jb51.net/code/json#home)
 
 ## Python下telnet的使用
@@ -47,3 +48,5 @@ tn.write('ls\n')
 tn.read_until(finish)
 tn.close() # tn.write('exit\n')
 ```
+
+## 正在了解Python的编码方式...
