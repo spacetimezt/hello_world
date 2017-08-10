@@ -17,6 +17,13 @@ data = json.loads(json_str)
 
 推荐一个好用的Json字符串美化工具：[点我](http://tools.jb51.net/code/json#home)
 
+格式化打印json字符串
+
+>print(json.dumps(tmp,indent=4))
+
+这样就能打印的漂漂亮亮的了O(∩_∩)O~~
+
+
 ## Python下telnet的使用
 ```
 import telnetlib
