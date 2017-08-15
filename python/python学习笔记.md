@@ -56,4 +56,49 @@ tn.read_until(finish)
 tn.close() # tn.write('exit\n')
 ```
 
+## Python 装饰器
+装饰器其实就是一个闭包，把一个函数当做参数然后返回一个替代版函数。
+```
+def outer(some_func):
+     def inner():
+         print "before some_func"
+         ret = some_func() # 1
+         return ret + 1
+     return inner
+def foo():
+     return 1
+decorated = outer(foo) # 2
+decorated()
+before some_func
+2
+```
+
+```
+def logger(func):
+    def inner(*args, **kwargs):  # 1
+        print "Arguments were: %s, %s" % (args, kwargs)
+        print func(*args, **kwargs)  # 2
+
+    return inner
+
+
+def foo3(x, y=1):
+    return x * y
+
+
+@logger
+def foo1(x, y=1):
+    return x * y
+
+
+foo2 = logger(foo3)
+foo1(5, 4)
+print('*' * 20)
+foo2(5, 4)
+
+```
+我的理解，装饰器一种简便写法。将foo2这种返回函数的写法简化成直接定义为foo1这种形式。相当于对foo1进行了装饰，用logger函数进行的装饰。
+
 ## 正在了解Python的编码方式...
+
+
