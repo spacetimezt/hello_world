@@ -101,5 +101,5 @@ foo2(5, 4)
 [资料链接](http://python.jobbole.com/81683/)
 
 ## 正在了解Python的编码方式...
-
+SHISHI
 
