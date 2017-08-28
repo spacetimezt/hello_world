@@ -9,9 +9,11 @@
 + 安装unzip
 > yum install unzip
 + 安装setuptools
-> wget https://pypi.python.org/packages/07/a0/11d3d76df54b9701c0f7bf23ea9b00c61c5e14eb7962bb29aed866a5844e/setuptools-36.2.7.zip#md5=b9e6c049617bac0f9e908a41ab4a29ac
-> unzip setuptools-36.2.7.zip 
-> cd setuptools-36.2.7
-> python setup.py install
+```
+wget https://pypi.python.org/packages/07/a0/11d3d76df54b9701c0f7bf23ea9b00c61c5e14eb7962bb29aed866a5844e/setuptools-36.2.7.zip#md5=b9e6c049617bac0f9e908a41ab4a29ac
+unzip setuptools-36.2.7.zip 
+cd setuptools-36.2.7
+python setup.py install
+```
 + 安装Scapy
 > easy_install scapy
