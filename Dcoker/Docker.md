@@ -12,7 +12,7 @@ image相当于类
 container相当于类实例化产生的对象
 
 每个container都是image产生的
-
+![](https://github.com/spacetimezt/hello_world/blob/master/Dcoker/Docker%E6%9E%B6%E6%9E%84.png)
 ## 安装
 ### CentOs下的安装
 > yum -y install docker
