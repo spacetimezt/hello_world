@@ -73,3 +73,14 @@ runoob/ubuntu:v2:指定要创建的目标镜像名
 使用新镜像来启动一个容器
 > docker run -t -i runoob/ubuntu:v2 /bin/bash     
 
+## 保存镜像为文件，以便其他机器使用
+> docker save -o 要保存的文件名    要保存的镜像
+例如：
+> docker save -o test.tar training/webapp:v2
+
+## 从文件载入镜像
+> docker load --input 文件
+或者
+> docker load < 文件名
+> docker load < test.tar
+
