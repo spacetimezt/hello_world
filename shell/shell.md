@@ -300,5 +300,127 @@ echo "两数之和为 : $val"
 - 表达式和运算符之间要有空格，例如 2+2 是不对的，必须写成 2 + 2，这与我们熟悉的大多数编程语言不一样。
 - 完整的表达式要被 ` ` 包含，注意这个字符不是常用的单引号，在 Esc 键下边。
 
+### 算术运算符
+下图列出了常用的算术运算符，假定变量 a 为 10，变量 b 为 20：
+![](https://github.com/spacetimezt/hello_world/blob/master/shell/calc.png)
 
+实例
+算术运算符实例如下：
+```
+#!/bin/bash
+# author:菜鸟教程
+# url:www.runoob.com
 
+a=10
+b=20
+
+val=`expr $a + $b`
+echo "a + b : $val"
+
+val=`expr $a - $b`
+echo "a - b : $val"
+
+val=`expr $a \* $b`
+echo "a * b : $val"
+
+val=`expr $b / $a`
+echo "b / a : $val"
+
+val=`expr $b % $a`
+
+if [ $a == $b ]
+then
+   echo "a 等于 b"
+fi
+if [ $a != $b ]
+then
+   echo "a 不等于 b"
+fi
+```
+
+执行脚本，输出结果如下所示：
+```
+a + b : 30
+a - b : -10
+a * b : 200
+b / a : 2
+b % a : 0
+a 不等于 b
+```
+注意：
+- 乘号(*)前边必须加反斜杠(\)才能实现乘法运算；
+- if...then...fi 是条件语句，后续将会讲解。
+在 MAC 中 shell 的 expr 语法是：$((表达式))，此处表达式中的 "*" 不需要转义符号 "\" 。
+
+这块还有很多内容，可以参照[这里](http://www.runoob.com/linux/linux-shell-basic-operators.html)。
+
+## Shell echo命令
+Shell 的 echo 指令与 PHP 的 echo 指令类似，都是用于字符串的输出。命令格式：
+> echo string
+
+您可以使用echo实现更复杂的输出格式控制。
+
+1.显示普通字符串:
+> echo "It is a test"
+
+这里的双引号完全可以省略，以下命令与上面实例效果一致：
+
+> echo It is a test
+
+2.显示转义字符
+
+> echo "\"It is a test\""
+
+结果将是:
+
+> "It is a test"
+
+同样，双引号也可以省略
+
+3.显示变量
+
+read 命令从标准输入中读取一行,并把输入行的每个字段的值指定给 shell 变量
+```
+#!/bin/sh
+read name 
+echo "$name It is a test"
+```
+以上代码保存为 test.sh，name 接收标准输入的变量，结果将是:
+```
+[root@www ~]# sh test.sh
+OK                     #标准输入
+OK It is a test        #输出
+```
+4.显示换行
+```
+echo -e "OK! \n" # -e 开启转义
+echo "It it a test"
+```
+输出结果：
+```
+OK!
+
+It it a test
+```
+
+5.显示不换行
+```
+#!/bin/sh
+echo -e "OK! \c" # -e 开启转义 \c 不换行
+echo "It is a test"
+```
+
+输出结果：
+> OK! It is a test
+6.显示结果定向至文件
+> echo "It is a test" > myfile
+
+7.原样输出字符串，不进行转义或取变量(用单引号)
+> echo '$name\"'
+输出结果：
+> $name\"
+8.显示命令执行结果
+> echo `date`
+注意： 这里使用的是反引号 `, 而不是单引号 '。
+结果将显示当前日期
+> Thu Jul 24 10:08:46 CST 2014
