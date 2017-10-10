@@ -77,13 +77,17 @@ print L
 - 对由tuple组成的List排序 
 
 Python代码 
-> >>> students = [('john', 'A', 15), ('jane', 'B', 12), ('dave', 'B', 10),]  
+```
+>>> students = [('john', 'A', 15), ('jane', 'B', 12), ('dave', 'B', 10),]  
+```
 
 用key函数排序：返回由tuple组成的list
 
 Python代码 
-> >>> sorted(students, key=lambda student : student[2])   # sort by age  
-> [('dave', 'B', 10), ('jane', 'B', 12), ('john', 'A', 15)]  
+```
+>>> sorted(students, key=lambda student : student[2])   # sort by age  
+[('dave', 'B', 10), ('jane', 'B', 12), ('john', 'A', 15)]  
+```
 
 用cmp函数排序 
 
