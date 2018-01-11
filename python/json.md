@@ -77,6 +77,7 @@ print text
 以上代码执行结果为：
 
 >{u'a': 1, u'c': 3, u'b': 2, u'e': 5, u'd': 4}
+
 json 类型转换到 python 的类型对照表：
 ```
 JSON	Python
@@ -89,6 +90,7 @@ true	True
 false	False
 null	None
 ```
+
 使用第三方库：Demjson
 Demjson 是 python 的第三方模块库，可用于编码和解码 JSON 数据，包含了 JSONLint 的格式化及校验功能。
 
@@ -103,6 +105,7 @@ $ tar -xvzf demjson-2.2.3.tar.gz
 $ cd demjson-2.2.3
 $ python setup.py install
 更多安装介绍查看：http://deron.meranda.us/python/demjson/install
+
 ```
 JSON 函数
 ```
@@ -116,6 +119,7 @@ Python encode() 函数用于将 Python 对象编码成 JSON 字符串。
 demjson.encode(self, obj, nest_level=0)
 实例
 以下实例将数组编码为 JSON 格式数据：
+
 ```
 #!/usr/bin/python
 import demjson
@@ -128,6 +132,7 @@ print json
 
 [{"a":1,"b":2,"c":3,"d":4,"e":5}]
 ```
+
 decode
 Python 可以使用 demjson.decode() 函数解码 JSON 数据。该函数返回 Python 字段的数据类型。
 
