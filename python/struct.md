@@ -102,7 +102,7 @@ a=12.34
 
 \#将a变为二进制
 
-bytes=struct.pack('i',a)
+bytes=struct.pack('d',a)
 
 此时bytes就是一个string字符串，字符串按字节同a的二进制存储内容相同。
 
@@ -110,7 +110,7 @@ bytes=struct.pack('i',a)
 
 现有二进制数据bytes，（其实就是字符串），将它反过来转换成python的数据类型：
 
-a,=struct.unpack('i',bytes)
+a,=struct.unpack('d',bytes)
 
 注意，unpack返回的是tuple
 
