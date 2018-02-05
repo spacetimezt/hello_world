@@ -1,5 +1,7 @@
 # Git常用指令
 
+## 本地Git命令
+
 1. 仓库初始化
 
    ```
@@ -149,3 +151,86 @@ $ git checkout -- test.txt
 git checkout其实是用版本库里的版本替换工作区的版本，无论工作区是修改还是删除，都可以“一键还原”。
 ```
 
+
+
+## 远程Git命令
+
+1.Git服务器搭建
+
+```
+#yum install -y git
+[root@localhost home]# useradd git
+[root@localhost home]# passwd git
+
+创建仓库并初始化
+[root@localhost home]# mkdir -p data/git/gittest.git
+[root@localhost home]# git init --bare data/git/gittest.git
+Initialized empty Git repository in /home/data/git/gittest.git/
+[root@localhost home]# cd data/git/
+[root@localhost git]# chown -R git:git gittest.git/
+
+克隆远程仓库
+在客户端
+$ git clone git@192.168.56.101:/home/data/gittest.git
+
+密钥形式登陆：
+创建私钥公钥（客户端完成）
+$ ssh-keygen -t rsa -C "test@qq.com"
+然后产生公钥和私钥
+
+服务器添加公钥：
+进入 /etc/ssh 目录，编辑 sshd_config，打开以下三个配置的注释：
+RSAAuthentication yes
+PubkeyAuthentication yes
+AuthorizedKeysFile .ssh/authorized_keys
+
+重启sshd服务
+[root@localhost ssh]# /etc/rc.d/init.d/sshd restart
+在centos下，使用 service sshd restart
+由 AuthorizedKeysFile 得知公钥的存放路径是 .ssh/authorized_keys，实际上是 $Home/.ssh/authorized_keys，由于管理 Git 服务的用户是 git，所以实际存放公钥的路径是 /home/git/.ssh/authorized_keys
+
+重要：
+修改 .ssh 目录的权限为 700
+修改 .ssh/authorized_keys 文件的权限为 600
+
+[root@localhost git]# chmod 700 .ssh
+[root@localhost git]# cd .ssh
+[root@localhost .ssh]# chmod 600 authorized_keys 
+
+禁止 git 用户 ssh 登录服务器
+之前在服务器端创建的 git 用户不允许 ssh 登录服务器
+编辑 /etc/passwd
+讲
+git:x:502:504::/home/git:/bin/bash
+修改为
+git:x:502:504::/home/git:/bin/git-shell
+
+```
+
+
+
+2.添加远程仓库
+
+```
+$ git remote add origin git@192.168.0.236:/home/git/test.git
+```
+
+3.把本地库的所有内容推送到远程库上：
+
+```
+$ git push -u origin master
+Counting objects: 19, done.
+Delta compression using up to 4 threads.
+Compressing objects: 100% (19/19), done.
+Writing objects: 100% (19/19), 13.73 KiB, done.
+Total 23 (delta 6), reused 0 (delta 0)
+To git@github.com:michaelliao/learngit.git
+ * [new branch]      master -> master
+Branch master set up to track remote branch master from origin.
+```
+
+4.之后做提交
+
+```
+$ git push origin master
+```
