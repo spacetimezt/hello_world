@@ -2,43 +2,43 @@
 
 ## 本地Git命令
 
-1. 仓库初始化
+1.仓库初始化
 
-   ```
-   $ git init
-   ```
+```
+$ git init
+```
 
-2. 添加文件到仓库
+2.添加文件到仓库
 
-  ```
-  $ git add readme.txt
-  $ git commit -m "wrote a readme file"
-  [master (root-commit) cb926e7] wrote a readme file
-   1 file changed, 2 insertions(+)
-   create mode 100644 readme.txt
-  ```
+```
+$ git add readme.txt
+$ git commit -m "wrote a readme file"
+[master (root-commit) cb926e7] wrote a readme file
+1 file changed, 2 insertions(+)
+create mode 100644 readme.txt
+```
 
-3. 添加多个文件
+3.添加多个文件
 
-  ```
-  $ git add file1.txt
-  $ git add file2.txt file3.txt
-  $ git commit -m "add 3 files."
-  ```
+```
+$ git add file1.txt
+$ git add file2.txt file3.txt
+$ git commit -m "add 3 files."
+```
 
-4. 查看是否有更改
+4.查看是否有更改
 
-   ```
-   $ git status
-   # On branch master
-   # Changes not staged for commit:
-   #   (use "git add <file>..." to update what will be committed)
-   #   (use "git checkout -- <file>..." to discard changes in working directory)
-   #
-   #    modified:   readme.txt
-   #
-   no changes added to commit (use "git add" and/or "git commit -a")
-   ```
+```
+$ git status
+# On branch master
+# Changes not staged for commit:
+#   (use "git add <file>..." to update what will be committed)
+#   (use "git checkout -- <file>..." to discard changes in working directory)
+#
+#    modified:   readme.txt
+#
+no changes added to commit (use "git add" and/or "git commit -a")
+```
 
 5.查看更改细节
 
