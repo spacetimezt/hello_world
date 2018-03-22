@@ -48,7 +48,7 @@ container相当于类实例化产生的对象
 ## 创建镜像
 
 - 更新镜像
-我们可以通过更新镜像的方式来创建一个镜像。
+  我们可以通过更新镜像的方式来创建一个镜像。
 
 更新镜像之前，我们需要使用镜像来创建一个容器。
 ```
@@ -75,12 +75,15 @@ runoob/ubuntu:v2:指定要创建的目标镜像名
 
 ## 保存镜像为文件，以便其他机器使用
 > docker save -o 要保存的文件名    要保存的镜像
-例如：
+> 例如：
 > docker save -o test.tar training/webapp:v2
 
 ## 从文件载入镜像
 > docker load --input 文件
-或者
+> 或者
 > docker load < 文件名
 > docker load < test.tar
 
+## Docker网络设置
+
+[这是文档](http://www.docker.org.cn/dockerppt/111.html)
