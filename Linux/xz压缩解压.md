@@ -1,4 +1,4 @@
-#Linux xz压缩解压
+# Linux xz压缩解压
 
 1. 解压 xz 格式文件
 
